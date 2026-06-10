@@ -1,0 +1,33 @@
+# DLC OS — Code Owners
+# These owners are automatically requested for review when matching files change.
+# Replace placeholders with real GitHub handles/teams as the team forms.
+# Order matters: the last matching pattern takes precedence.
+
+# Default — everything
+*                           @dlc-os/maintainers
+
+# Backend / core
+/apps/api/                  @dlc-os/backend
+/apps/workers/              @dlc-os/backend
+
+# AI subsystem
+/apps/api/src/dlcos/modules/ai/   @dlc-os/ai
+
+# Channels
+/apps/bots/                 @dlc-os/channels
+/apps/api/src/dlcos/modules/channels/  @dlc-os/channels
+
+# Payments (extra scrutiny)
+/apps/api/src/dlcos/modules/payments/  @dlc-os/payments @dlc-os/maintainers
+
+# Frontend
+/apps/web/                  @dlc-os/frontend
+/packages/ui/               @dlc-os/frontend
+
+# Infra / deployment
+/infra/                     @dlc-os/devops
+/.github/                   @dlc-os/maintainers
+
+# Docs
+/docs/                      @dlc-os/docs
+*.md                        @dlc-os/docs

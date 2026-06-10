@@ -1,0 +1,72 @@
+name: "✨ Feature request"
+description: Suggest an idea or improvement
+title: "[Feature]: "
+labels: ["type: feature", "status: needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape DLC OS! Please describe the problem first — the best
+        features start from a real need. See the [Roadmap](../ROADMAP.md) for context.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: The user/business pain. Avoid jumping straight to a solution.
+      placeholder: As a <persona>, I want to <goal>, so that <outcome>.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What you'd like to see. Sketches/flows welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - API / Core
+        - Web / Dashboard
+        - AI
+        - Discord
+        - WhatsApp
+        - Telegram
+        - Payments
+        - Marketplace
+        - CRM
+        - Marketing
+        - Analytics
+        - Infra / Deployment
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Which roadmap phase does this fit?
+      options:
+        - "MVP (Phase 1)"
+        - "Phase 2"
+        - "Phase 3"
+        - "Not sure"
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd be willing to help implement this
+          required: false
+        - label: I searched existing issues/discussions for duplicates
+          required: true

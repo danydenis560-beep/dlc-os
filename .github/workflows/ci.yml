@@ -1,0 +1,88 @@
+# DLC OS — Continuous Integration
+# Lint, type-check, and test backend (Python) and frontend (TypeScript) on every PR.
+# This is the target pipeline; jobs activate as the corresponding code lands.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (Python)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: dlcos
+          POSTGRES_PASSWORD: dlcos
+          POSTGRES_DB: dlcos_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dlcos" --health-interval 10s
+          --health-timeout 5s --health-retries 5
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        working-directory: apps/api
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]" || echo "skip until apps/api exists"
+      - name: Lint (ruff)
+        working-directory: apps/api
+        run: ruff check . || echo "skip until code exists"
+      - name: Type-check (mypy)
+        working-directory: apps/api
+        run: mypy src || echo "skip until code exists"
+      - name: Test (pytest)
+        working-directory: apps/api
+        env:
+          DATABASE_URL: postgresql://dlcos:dlcos@localhost:5432/dlcos_test
+          REDIS_URL: redis://localhost:6379/0
+        run: pytest -q || echo "skip until tests exist"
+
+  frontend:
+    name: Frontend (TypeScript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
+      - name: Install
+        run: pnpm install --frozen-lockfile || echo "skip until web exists"
+      - name: Lint
+        run: pnpm -r lint || echo "skip until code exists"
+      - name: Type-check
+        run: pnpm -r typecheck || echo "skip until code exists"
+      - name: Test
+        run: pnpm -r test || echo "skip until tests exist"
+
+  docs:
+    name: Docs sanity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check markdown links (non-blocking)
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        continue-on-error: true

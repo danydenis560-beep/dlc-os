@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discord community
+    url: https://discord.gg/your-invite
+    about: Questions, help, and roadmap chat — the fastest way to get answers.
+  - name: 🗣️ GitHub Discussions
+    url: https://github.com/danydenis560-beep/dlc-os/discussions
+    about: Proposals (RFCs), Q&A, and show & tell.
+  - name: 🔐 Report a security vulnerability
+    url: https://github.com/danydenis560-beep/dlc-os/security/advisories/new
+    about: Please report security issues privately (see SECURITY.md), not as public issues.
