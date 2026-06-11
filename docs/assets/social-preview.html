@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:640px; }
+  body {
+    font-family:"Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    background:#0B0D12; color:#E8EAED; overflow:hidden;
+  }
+  .card {
+    position:relative; width:1280px; height:640px;
+    background:
+      radial-gradient(900px 520px at 96% -12%, rgba(124,124,240,0.22), transparent 60%),
+      radial-gradient(760px 520px at -6% 112%, rgba(91,91,214,0.15), transparent 60%),
+      #0B0D12;
+    padding:74px 80px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .frame { position:absolute; inset:24px; border:1px solid #232733; border-radius:28px; }
+  .grid { position:absolute; inset:0; opacity:0.05;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(circle at 72% 26%, #000 0%, transparent 72%); }
+  .top { position:relative; z-index:2; }
+  .kicker { color:#8E8EF6; font-size:22px; font-weight:700; letter-spacing:0.30em; text-transform:uppercase; margin-bottom:24px; }
+  .brand { display:flex; align-items:center; gap:28px; }
+  .mark { width:98px; height:98px; border-radius:24px;
+    background:linear-gradient(145deg,#8484F4,#5B5BD6);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 16px 44px rgba(91,91,214,0.50); }
+  .wordmark { font-size:132px; font-weight:800; letter-spacing:-0.02em; line-height:1; }
+  .wordmark .os { background:linear-gradient(120deg,#A6A6FB,#7C7CF0);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .tagline { margin-top:32px; font-size:41px; font-weight:600; color:#EDEFF3; }
+  .desc { margin-top:14px; font-size:25px; color:#9AA3B2; max-width:1010px; line-height:1.42; }
+  .channels { display:flex; gap:16px; margin-top:36px; }
+  .pill { display:flex; align-items:center; gap:13px; padding:14px 24px;
+    border:1px solid #2A2F3D; border-radius:999px; background:rgba(255,255,255,0.035);
+    font-size:23px; font-weight:600; color:#E8EAED; }
+  .dot { width:14px; height:14px; border-radius:50%; }
+  .bottom { position:relative; z-index:2; display:flex; align-items:flex-end; justify-content:space-between; }
+  .by { font-size:24px; color:#9AA3B2; }
+  .by b { color:#EDEFF3; font-weight:700; }
+  .badge { display:flex; align-items:center; gap:12px; padding:13px 24px;
+    border:1px solid #3A4474; border-radius:999px; background:rgba(124,124,240,0.10);
+    color:#A6A6FB; font-size:21px; font-weight:700; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid"></div>
+    <div class="frame"></div>
+    <div class="top">
+      <div class="kicker">Open Source &middot; AI-Native &middot; Self-Hostable</div>
+      <div class="brand">
+        <div class="mark">
+          <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5.8 7h12.4l1.15 13.1a1.1 1.1 0 0 1-1.1 1.2H5.75a1.1 1.1 0 0 1-1.1-1.2L5.8 7z"/>
+            <path d="M9 7a3 3 0 0 1 6 0"/>
+          </svg>
+        </div>
+        <div class="wordmark">DLC <span class="os">OS</span></div>
+      </div>
+      <div class="tagline">The Open Source AI Commerce Operating System</div>
+      <div class="desc">Sell &amp; support customers across web, Discord, WhatsApp &amp; Telegram &mdash; from one AI-powered dashboard.</div>
+      <div class="channels">
+        <div class="pill"><span class="dot" style="background:#7C7CF0"></span>Web</div>
+        <div class="pill"><span class="dot" style="background:#5865F2"></span>Discord</div>
+        <div class="pill"><span class="dot" style="background:#25D366"></span>WhatsApp</div>
+        <div class="pill"><span class="dot" style="background:#229ED9"></span>Telegram</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="by">by <b>DLC Market</b> &middot; dlcmarket.com</div>
+      <div class="badge">AGPL-3.0 &middot; github.com/danydenis560-beep/dlc-os</div>
+    </div>
+  </div>
+</body>
+</html>

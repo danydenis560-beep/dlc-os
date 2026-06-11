@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🛍️ DLC OS
-
-### The Open Source AI Commerce Operating System
+<img src="./docs/assets/social-preview.png" alt="DLC OS — The Open Source AI Commerce Operating System" width="820">
 
 **Sell products and manage customers across your website, Discord, WhatsApp, Telegram, and social media — from one AI-powered dashboard.**
 
