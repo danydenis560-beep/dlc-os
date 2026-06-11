@@ -1,7 +1,8 @@
 # Funding sources for DLC OS — keeps maintainers paid and the project healthy.
-# Fill in real handles when accounts exist.
-github: [dlc-os]
-open_collective: dlc-os
+# Uncomment a line once the matching account exists. GitHub Sponsors requires
+# enrolling first (https://github.com/sponsors) before the Sponsor button shows.
+# github: [danydenis560-beep]
+# open_collective: dlc-os
 # patreon:
 # ko_fi:
-# custom: ["https://dlc-os.dev/sponsor"]
+# custom: ["https://dlcmarket.com"]

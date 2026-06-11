@@ -11,7 +11,7 @@ _by **[DLC Market](https://dlcmarket.com)**_
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](./LICENSE)
 [![Status: Pre-Alpha](https://img.shields.io/badge/status-pre--alpha%20(vision)-orange.svg)](./docs/11-development-roadmap.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-[![Discord](https://img.shields.io/badge/Discord-join%20chat-5865F2.svg)](#community)
+[![Discord](https://img.shields.io/badge/Discord-join%20chat-5865F2.svg)](https://discord.gg/pSuq75c2)
 [![Documentation](https://img.shields.io/badge/docs-read-blue.svg)](./docs/README.md)
 
 [**Vision**](./docs/01-product-vision.md) ·
@@ -194,9 +194,8 @@ DLC OS is built by its community. Whether you write Python, design interfaces, w
 
 ## 💬 Community
 
-- **Discord** — chat, support, and roadmap discussions *(link coming soon)*
+- **Discord** — [join the community](https://discord.gg/pSuq75c2) for chat, support, and roadmap discussions
 - **GitHub Discussions** — proposals, Q&A, show & tell
-- **X / Twitter** — `@dlc_os` *(coming soon)*
 
 > ⭐ **Star this repo** to follow along — it genuinely helps the project grow and signals demand to contributors.
 

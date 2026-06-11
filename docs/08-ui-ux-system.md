@@ -43,92 +43,104 @@ themed via tokens, documented in Storybook.
 ## Navigation structure
 
 ```
-┌ Top bar: org switcher · global search/⌘K · notifications · profile
-│
-├ Sidebar
-│  ├ 🏠 Overview
-│  ├ 🛒 Catalog        → Products · Categories · Bundles · Inventory
-│  ├ 📦 Orders         → All · Returns · Refunds
-│  ├ 👥 Customers      → Profiles · Segments · Loyalty
-│  ├ 🏪 Marketplace    → Vendors · Commissions · Payouts
-│  ├ 💬 Channels       → Discord · WhatsApp · Telegram · Web
-│  ├ 📣 Marketing      → Campaigns · Referrals · Affiliates · Coupons
-│  ├ 🚚 Shipping
-│  ├ 📊 Analytics      → Revenue · Customers · Products · Vendors
-│  ├ 🤖 Assistant      (AI chat / voice)
-│  └ ⚙️ Settings       → Team · Roles · Payments · Channels · API · Billing
+Top bar: org switcher · global search/⌘K · notifications · profile
+
+Sidebar
+  🏠 Overview
+  🛒 Catalog → Products · Categories · Bundles · Inventory
+  📦 Orders → All · Returns · Refunds
+  👥 Customers → Profiles · Segments · Loyalty
+  🏪 Marketplace → Vendors · Commissions · Payouts
+  💬 Channels → Discord · WhatsApp · Telegram · Web
+  📣 Marketing → Campaigns · Referrals · Affiliates · Coupons
+  🚚 Shipping
+  📊 Analytics → Revenue · Customers · Products · Vendors
+  🤖 Assistant → (AI chat / voice)
+  ⚙️ Settings → Team · Roles · Payments · Channels · API · Billing
 ```
 
 ## Key screens (wireframes)
 
+> Rendered as labelled panels (`▸` = a screen region). The real UI is fully
+> bordered cards; these sketches focus on content and hierarchy.
+
 ### Overview / Home
 
 ```
-┌───────────────────────────────────────────────────────────────┐
-│  Good morning, Maya   ·   [ Ask the assistant… ⌘K ]           │
-├───────────────┬───────────────┬───────────────┬───────────────┤
-│ Revenue (7d)  │ Orders (7d)   │ New customers │ Conv. rate    │
-│ $12,480  ▲14% │ 312     ▲6%   │ 89      ▲9%   │ 3.4%   ▼0.2%  │
-├───────────────┴───────────────┴───────────────┴───────────────┤
-│  Revenue over time            │  Channel mix                  │
-│  ▁▂▃▅▆▇█  (line chart)        │  Discord 41% · Web 33% · …     │
-├───────────────────────────────┴───────────────────────────────┤
-│  🤖 AI Brief:                                                  │
-│  "Sales up 14% w/w driven by Discord. 'Pro License' is        │
-│   trending. 3 SKUs are low on stock — want me to reorder?"    │
-│            [ Generate full report ]   [ Review low stock ]    │
-├───────────────────────────────────────────────────────────────┤
-│  Recent orders                              Needs attention   │
-│  #1203 · $49 · Discord · paid              · 2 tickets open   │
-│  #1202 · $120 · Web · fulfilled            · 1 refund req     │
-└───────────────────────────────────────────────────────────────┘
+▸ Topbar
+    Good morning, Maya     [ Ask the assistant… ⌘K ]
+
+▸ KPIs
+    Revenue (7d) — $12,480 (▲14%)
+    Orders (7d) — 312 (▲6%)
+    New customers — 89 (▲9%)
+    Conv. rate — 3.4% (▼0.2%)
+
+▸ Panels
+    Revenue over time — ▁▂▃▅▆▇█ (line chart)
+    Channel mix — Discord 41% · Web 33% · …
+
+▸ 🤖 AI Brief
+    "Sales up 14% w/w driven by Discord. 'Pro License' is
+     trending. 3 SKUs are low on stock — want me to reorder?"
+    [ Generate full report ]  [ Review low stock ]
+
+▸ Recent orders
+    #1203 · $49 · Discord · paid
+    #1202 · $120 · Web · fulfilled
+
+▸ Needs attention
+    • 2 tickets open
+    • 1 refund req
 ```
 
 ### Products list
 
 ```
-┌ Products ──────────────────────────────  [ + New product ]  ──┐
-│ [search]  Status▾  Type▾  Channel▾  Vendor▾        [ ⌘K AI ] │
-├───────────────────────────────────────────────────────────────┤
-│ ☐  Image  Title           Type     Price   Stock   Status     │
-│ ☐  🖼     Pro License      digital  $49     ∞       ● Active   │
-│ ☐  🖼     Hoodie (Black)   physical $60     12      ● Active   │
-│ ☐  🖼     Starter Bundle   bundle   $99     —       ◌ Draft    │
-│ ───────────────────────────────────────────────────────────── │
-│ Bulk: [ Publish ] [ Archive ] [ Edit price ]   1–20 of 142 ▸ │
-└───────────────────────────────────────────────────────────────┘
+▸ Products     [ + New product ]
+    Filters: [search] Status▾ Type▾ Channel▾ Vendor▾  [ ⌘K AI ]
+
+    ☐ 🖼 Pro License — digital · $49 · stock ∞ · ● Active
+    ☐ 🖼 Hoodie (Black) — physical · $60 · stock 12 · ● Active
+    ☐ 🖼 Starter Bundle — bundle · $99 · stock — · ◌ Draft
+
+    Bulk: [ Publish ] [ Archive ] [ Edit price ]   1–20 of 142 ▸
 ```
 
 ### Customer 360°
 
 ```
-┌ Sarah Lee  ·  sarah@…  ·  LTV $640  ·  ⭐ VIP ──────────────┐
-│ Tags: [returning] [discord]            [ Message ] [ Note ] │
-├──────────────────────┬─────────────────────────────────────┤
-│ Timeline             │ Orders (8)                          │
-│ • Bought Pro License │  #1203 $49 paid · Discord           │
-│ • DM on Discord      │  #1180 $120 fulfilled · Web         │
-│ • Opened campaign    │ Loyalty: 640 pts                    │
-│ • Left 5★ review     │ Segments: VIP, Newsletter           │
-├──────────────────────┴─────────────────────────────────────┤
-│ 🤖 "Sarah buys every ~30 days; last order 34 days ago.     │
-│     Suggest a win-back with her favorite category."        │
-└─────────────────────────────────────────────────────────────┘
+▸ Sarah Lee · sarah@… · LTV $640 · ⭐ VIP
+    Tags: [returning] [discord]     [ Message ] [ Note ]
+
+▸ Timeline
+    • Bought Pro License
+    • DM on Discord
+    • Opened campaign
+    • Left 5★ review
+
+▸ Orders (8)
+    #1203 · $49 · paid · Discord
+    #1180 · $120 · fulfilled · Web
+    Loyalty: 640 pts
+    Segments: VIP, Newsletter
+
+▸ 🤖 "Sarah buys every ~30 days; last order 34 days ago.
+    Suggest a win-back with her favorite category."
 ```
 
 ### AI Assistant surface
 
 ```
-┌ Assistant ─────────────────────────────────[ 🎤 voice ]──────┐
-│  You: How did Discord sales do this week and what's low?     │
-│                                                              │
-│  🤖 Discord did $5,118 (41% of revenue, ▲22% w/w).          │
-│     Low stock: Hoodie-Black (12), Mug (4), Cap (7).         │
-│     ▸ [ Reorder all ]  ▸ [ Make a campaign ]  ▸ [ Report ] │
-│                                                              │
-│  [ Type a message…                                    ➤ ]   │
-│  Suggestions: "Refund #1203" · "Top customers" · "Forecast" │
-└──────────────────────────────────────────────────────────────┘
+▸ Assistant     [ 🎤 voice ]
+    You: How did Discord sales do this week and what's low?
+
+    🤖 Discord did $5,118 (41% of revenue, ▲22% w/w).
+    Low stock: Hoodie-Black (12), Mug (4), Cap (7).
+    ▸ [ Reorder all ]  ▸ [ Make a campaign ]  ▸ [ Report ]
+
+    [ Type a message… ➤ ]
+    Suggestions: "Refund #1203" · "Top customers" · "Forecast"
 ```
 
 ## Core user flows

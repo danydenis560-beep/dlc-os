@@ -22,7 +22,7 @@ security patches.
 Instead, report privately via one of:
 
 1. **GitHub Security Advisories** — "Report a vulnerability" on the Security tab (preferred).
-2. **Email** — `security@dlc-os.dev` (PGP key published on the website).
+2. **Email** — `danydenis560@gmail.com` (for sensitive reports).
 
 Please include:
 
