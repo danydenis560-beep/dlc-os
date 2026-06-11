@@ -13,7 +13,7 @@ _by **[DLC Market](https://dlcmarket.com)**_
 [![Documentation](https://img.shields.io/badge/docs-read-blue.svg)](./docs/README.md)
 
 [**Vision**](./docs/01-product-vision.md) ·
-[**Architecture**](./docs/04-architecture.md) ·
+[**Architecture**](./ARCHITECTURE.md) ·
 [**Roadmap**](./ROADMAP.md) ·
 [**Docs**](./docs/README.md) ·
 [**Contribute**](./CONTRIBUTING.md)
